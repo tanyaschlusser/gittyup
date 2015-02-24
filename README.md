@@ -9,4 +9,4 @@ sign the **guestbook.txt** file, and pull!
 
 The [guest list, rendered] [guestbook].
 
-[guestbook] http://tanyaschlusser.github.io/gittyup/
+[guestbook]: http://tanyaschlusser.github.io/gittyup/
