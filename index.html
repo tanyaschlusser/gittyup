@@ -38,7 +38,7 @@ d3.text("guestbook.txt",
           .attr("x", function(d, i){
               return 90  * (i & 1) + Math.floor(Math.random() * 42); })
           .attr("y", function(d, i){
-              return spacing * (i + 1) + Math.random(); })
+              return spacing * i + Math.random(); })
           .attr("transform", function(d, i){
               return "translate(" +
                      d3.select(this).attr("x") +
