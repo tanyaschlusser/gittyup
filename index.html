@@ -26,9 +26,8 @@ d3.text("guestbook.txt",
     
       var display = d3.select("svg");
       display
-        .style("height", spacing * 2 * guests.length + "vw")
         .attr("viewBox",
-              [-10, -10, 900, spacing * 2 * guests.length].join(" "));
+              [-10, -220, 900, spacing * 2 * guests.length].join(" "));
     
       // Add the guests.
       var signatures = display.selectAll("text")
