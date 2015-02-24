@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gittyup Guestbook</title>
+<link href='http://fonts.googleapis.com/css?family=Walter+Turncoat'
+      rel='stylesheet'
+      type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src='http://d3js.org/d3.v3.min.js'></script>
+</head>
+<body>
+<svg></svg>
+<script>
+document.domain = "github.com";
+d3.text("https://raw.githubusercontent.com/tanyaschlusser/gittyup/master/guestbook.txt",
+  function(guestbook){
+      var spacing = 30;
+      var guests = guestbook.split(/\r\n|\r|\n/g);
+      var colorblindColors = [
+              "rgb(230,150,0)",
+              "rgb(86,180,233)",
+              "rgb(0, 158, 115)",
+              "rgb(240, 228, 66)",
+              "rgb(0,114,178)",
+              "rgb(213,94,0)",
+              "rgb(204,121,167)"];
+    
+      var display = d3.select("svg");
+      display
+        .style("height", 10 * guests.length + "vw")
+        .attr("viewBox",
+              [-10, -20, 900, spacing * 1.5 * guests.length].join(" "));
+    
+      // Add the guests.
+      var signatures = display.selectAll("text")
+          .data(guests)
+        .enter().append("text")
+          .text(function(d){ return d; })
+          .attr("x", function(d, i){
+              return 90  * (i & 1) + Math.floor(Math.random() * 42); })
+          .attr("y", function(d, i){
+              return spacing * (i + 1) + Math.random(); })
+          .attr("transform", function(d, i){
+              return "translate(" +
+                     d3.select(this).attr("x") +
+                     ", " +
+                     d3.select(this).attr("y") +
+                     "), rotate(" + 
+                     Math.asin(Math.random() - 0.42) * 20 / Math.PI +
+                     ")"; })
+          .style("fill", function(){
+              return colorblindColors[
+                  Math.floor(Math.random() * colorblindColors.length)]; });
+});
+</script>
+</body>
+</html>

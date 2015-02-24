@@ -1,0 +1,17 @@
+body {
+	font-family: "Walter Turncoat", sans;	
+}
+
+svg {
+	margin-left: auto;
+	margin-right: auto;
+	overflow: scroll;
+	width: 90vw;
+}
+
+svg text {
+	stroke: black;
+    stroke-width: 0.25;
+	font-size: 20pt;
+	font-weight: 900
+}
