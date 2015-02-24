@@ -7,6 +7,6 @@ This is a 'GitHub guestbook page' to be used to confirm:
 If you want to try it out, please fork this,
 sign the **guestbook.txt** file, and pull!
 
-The [guest list, rendered] [guestbook].
+Your message should soon appear on the [guest list webpage] [guestbook].
 
 [guestbook]: http://tanyaschlusser.github.io/gittyup/
