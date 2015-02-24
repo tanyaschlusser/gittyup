@@ -22,13 +22,13 @@ d3.text("guestbook.txt",
               "rgb(240, 228, 66)",
               "rgb(0,114,178)",
               "rgb(213,94,0)",
-              "rgb(204,121,167)"];
+             "rgb(204,121,167)"];
     
       var display = d3.select("svg");
       display
         .style("height", 10 * guests.length + "vw")
         .attr("viewBox",
-              [-10, -20, 900, spacing * 1.5 * guests.length].join(" "));
+              [-10, -20, 900, spacing * 2 * guests.length].join(" "));
     
       // Add the guests.
       var signatures = display.selectAll("text")
