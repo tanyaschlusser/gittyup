@@ -1,0 +1,3 @@
+# Ignore irrelevant files from the Sublime Text editor
+*.sublime-workspace
+*.sublime-project

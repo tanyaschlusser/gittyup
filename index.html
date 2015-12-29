@@ -9,10 +9,10 @@
 <script src='http://d3js.org/d3.v3.min.js'></script>
 </head>
 <body>
+<h1>Guest book:</h1>
 <svg></svg>
 <script>
-document.domain = "github.com";
-d3.text("https://raw.githubusercontent.com/tanyaschlusser/gittyup/master/guestbook.txt",
+d3.text("guestbook.txt",
   function(guestbook){
       var spacing = 30;
       var guests = guestbook.split(/\r\n|\r|\n/g);
@@ -23,13 +23,12 @@ d3.text("https://raw.githubusercontent.com/tanyaschlusser/gittyup/master/guestbo
               "rgb(240, 228, 66)",
               "rgb(0,114,178)",
               "rgb(213,94,0)",
-              "rgb(204,121,167)"];
+             "rgb(204,121,167)"];
     
       var display = d3.select("svg");
       display
-        .style("height", 10 * guests.length + "vw")
         .attr("viewBox",
-              [-10, -20, 900, spacing * 1.5 * guests.length].join(" "));
+              [-10, -25, 900, spacing * 2 * guests.length].join(" "));
     
       // Add the guests.
       var signatures = display.selectAll("text")
@@ -39,7 +38,7 @@ d3.text("https://raw.githubusercontent.com/tanyaschlusser/gittyup/master/guestbo
           .attr("x", function(d, i){
               return 90  * (i & 1) + Math.floor(Math.random() * 42); })
           .attr("y", function(d, i){
-              return spacing * (i + 1) + Math.random(); })
+              return spacing * i + Math.random(); })
           .attr("transform", function(d, i){
               return "translate(" +
                      d3.select(this).attr("x") +
